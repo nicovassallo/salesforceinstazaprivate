@@ -2,12 +2,16 @@
   "packageDirectories": [
     {
       "path": "force-app",
-      "default": true
+      "default": true,
+      "package": "FibonacciApp",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT"
     }
   ],
   "name": "miadev20260419",
-  "namespace": "",
+  "namespace": "nvfibo",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "66.0",
-  "defaultLwcLanguage": "javascript"
+  "defaultLwcLanguage": "javascript",
+  "packageAliases": {}
 }
