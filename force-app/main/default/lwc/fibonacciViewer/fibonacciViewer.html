@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="Fibonacci Logger" icon-name="utility:number_input">
+        <div class="slds-p-horizontal_medium">
+            <lightning-button
+                variant="brand"
+                label="Start"
+                title="Calcola i primi 10 numeri di Fibonacci"
+                onclick={handleStart}
+                disabled={isLoading}>
+            </lightning-button>
+
+            <template lwc:if={isLoading}>
+                <div class="slds-m-top_medium">
+                    <lightning-spinner alternative-text="Caricamento..." size="small"></lightning-spinner>
+                </div>
+            </template>
+
+            <template lwc:if={error}>
+                <div class="slds-m-top_medium slds-text-color_error">
+                    {error}
+                </div>
+            </template>
+
+            <template lwc:if={hasSequence}>
+                <div class="slds-m-top_medium">
+                    <h3 class="slds-text-heading_small slds-m-bottom_x-small">
+                        Sequenza di Fibonacci - primi 10 numeri:
+                    </h3>
+                    <ul class="slds-list_dotted">
+                        <template for:each={items} for:item="item">
+                            <li key={item.index}>
+                                F({item.index}) = <strong>{item.value}</strong>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
